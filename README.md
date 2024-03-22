@@ -208,6 +208,8 @@ So, if you want to have networking on your virtualized guest then you can try:
 ```sh
 sudo ./simulate --extra-qemu-args="-netdev tap,id=mynet0,ifname=tap0,script=no,downscript=no -device virtio-net,netdev=mynet0,mac=52:55:00:d1:55:01,disable-modern=on,disable-legacy=off"
 ```
+*Notice: you may need to create tap0 interface if you don't have it already. As an example, this is how it can be done on Ubuntu: 
+https://manpages.ubuntu.com/manpages/focal/en/man8/tunctl.8.html
 
 3rd- Manually create the bridge interface to connect the guest and the host networking. Again, here specific commands' syntax depends on every environment. Just as an example here what worked on Ubuntu 20.04:
 
